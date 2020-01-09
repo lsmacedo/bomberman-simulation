@@ -15,6 +15,7 @@ class Grid:
         print('Segundo 0')
         print(self)
 
+    # Inicializa as listas de posições e de bombas a partir da lista inicial
     def __determinar_posicoes(self, linhas_arr):
         for l, linha in enumerate(linhas_arr):
             for c, celula in enumerate(linha):
@@ -23,10 +24,12 @@ class Grid:
                 if (celula == Constantes.BOMBA): 
                     self.bombas.append(posicao)
     
+    # Simula a passada de N segundos
     def passar_segundos(self, num_segundos):
         for i in range(num_segundos):
             self.passar_segundo()
   
+    # Simula a passada de 1 segundo
     def passar_segundo(self):
         for bomba in self.bombas:
             if (bomba.momento_criacao + 3 == self.segundo_atual):
@@ -41,6 +44,7 @@ class Grid:
 
         self.segundo_atual += 1
 
+    # Cria uma explosão a partir da bomba passada por parâmetro
     def explodir(self, bomba):
         # Explodindo de posicao atual ate direita
         for c in range(bomba.coluna, len(self.posicoes[bomba.linha])):
@@ -72,6 +76,7 @@ class Grid:
         
         bomba.explodir()
 
+    # Preenche as posições vazias do grid com bombas
     def implantar_bombas(self):
         for l, linha in enumerate(self.posicoes):
             for c, celula in enumerate(linha):
