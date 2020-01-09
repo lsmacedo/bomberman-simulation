@@ -16,6 +16,34 @@ clone este repositório, então abra o terminal na pasta e execute o seguinte co
     
 *Observação*: A aplicação foi desenvolvida para Python 2 e pode não funcionar corretamente com outras versões.
 
+**Entrada de exemplo**
+
+O teste a seguir demonstra o funcionamento desta simulação. 
+
+São inicialmente solicitados o número de linhas, colunas e os segundos a serem simulados. Para isto, utilize:
+
+    6 7 3
+
+Após isto, é exibida a seguinte mensagem: "Informe agora o conteudo de cada linha, uma por vez. Utilize 'O' para bombas, 'X' para obstaculos e '.' para espacos vazios.".
+Para isto, utilize:
+
+    .......
+    ..XO...
+    ....O..
+    .X.....
+    OOX....
+    OO.....
+
+Saída esperada:
+
+    Apos 3 segundos, o grid estara da seguinte forma:
+    .OO..OO
+    .OX....
+    .......
+    .XO..OO
+    ..X..OO
+    .......
+
 **Detalhes de implementação**
 
 A seguir, serão listadas as classes do programa juntamente com seus detalhes de implementação.
